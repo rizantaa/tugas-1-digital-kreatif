@@ -1,0 +1,427 @@
+/* ============================================
+   Tugas 1 - Digital Kreatif
+   Rizanta Ridho Aprilyan (19231312)
+   ============================================ */
+
+:root {
+  --primary: #1a56db;
+  --primary-dark: #123a94;
+  --accent: #f59e0b;
+  --bg: #f8fafc;
+  --surface: #ffffff;
+  --text: #1e293b;
+  --text-muted: #64748b;
+  --border: #e2e8f0;
+  --code-bg: #f1f5f9;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 80px;
+}
+
+body {
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.75;
+  font-size: 16px;
+}
+
+/* ---------- Header ---------- */
+header {
+  background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
+  color: #fff;
+  padding: 56px 24px 48px;
+  text-align: center;
+}
+
+header .badge {
+  display: inline-block;
+  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  padding: 6px 16px;
+  border-radius: 999px;
+  font-size: 0.85rem;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  margin-bottom: 20px;
+}
+
+header h1 {
+  font-size: clamp(1.7rem, 4vw, 2.6rem);
+  font-weight: 800;
+  margin-bottom: 12px;
+}
+
+header p.subtitle {
+  font-size: 1.05rem;
+  opacity: 0.9;
+  max-width: 640px;
+  margin: 0 auto 28px;
+}
+
+.identity {
+  display: inline-block;
+  background: rgba(0, 0, 0, 0.22);
+  border-left: 4px solid var(--accent);
+  padding: 12px 24px;
+  border-radius: 6px;
+  text-align: left;
+}
+
+.identity span {
+  display: block;
+  font-size: 0.95rem;
+}
+
+.identity .nim {
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.identity .nama {
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+/* ---------- Layout ---------- */
+.container {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ---------- Daftar Isi ---------- */
+.toc {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px 28px;
+  margin: -32px auto 40px;
+  position: relative;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+}
+
+.toc h2 {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--text-muted);
+  margin-bottom: 14px;
+}
+
+.toc ol {
+  list-style: none;
+  counter-reset: toc;
+  display: grid;
+  gap: 8px;
+}
+
+.toc li {
+  counter-increment: toc;
+}
+
+.toc a {
+  display: flex;
+  gap: 12px;
+  align-items: baseline;
+  color: var(--text);
+  text-decoration: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  transition: background 0.2s, color 0.2s;
+}
+
+.toc a::before {
+  content: "0" counter(toc);
+  font-weight: 800;
+  color: var(--primary);
+  font-size: 0.9rem;
+}
+
+.toc a:hover {
+  background: #eff6ff;
+  color: var(--primary);
+}
+
+/* ---------- Konten ---------- */
+main {
+  padding-bottom: 64px;
+}
+
+section.jawaban {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 36px 40px;
+  margin-bottom: 32px;
+}
+
+section.jawaban .soal {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--primary);
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+
+section.jawaban h2 {
+  font-size: clamp(1.2rem, 3vw, 1.5rem);
+  line-height: 1.4;
+  margin-bottom: 20px;
+  padding-bottom: 14px;
+  border-bottom: 2px solid var(--border);
+}
+
+section.jawaban h3 {
+  font-size: 1.08rem;
+  margin: 26px 0 10px;
+  color: var(--primary-dark);
+}
+
+section.jawaban p {
+  margin-bottom: 14px;
+}
+
+section.jawaban ul,
+section.jawaban ol {
+  margin: 0 0 16px 24px;
+}
+
+section.jawaban li {
+  margin-bottom: 8px;
+}
+
+strong {
+  color: var(--primary-dark);
+}
+
+.highlight {
+  background: #fffbeb;
+  border-left: 4px solid var(--accent);
+  padding: 14px 18px;
+  border-radius: 0 8px 8px 0;
+  margin: 18px 0;
+  font-size: 0.97rem;
+}
+
+/* ---------- Tabel ---------- */
+.tabel-wrap {
+  overflow-x: auto;
+  margin: 20px 0;
+  border: 1px solid var(--border);
+  border-radius: 10px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+  min-width: 560px;
+}
+
+thead {
+  background: var(--primary);
+  color: #fff;
+}
+
+th,
+td {
+  padding: 12px 16px;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--border);
+}
+
+tbody tr:nth-child(even) {
+  background: #f8fafc;
+}
+
+tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* ---------- Diagram ---------- */
+.diagram {
+  background: var(--code-bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 24px;
+  margin: 20px 0;
+}
+
+.diagram figcaption {
+  text-align: center;
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  margin-top: 14px;
+  font-style: italic;
+}
+
+.flow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  justify-content: center;
+  gap: 10px;
+}
+
+.flow .step {
+  background: #fff;
+  border: 2px solid var(--primary);
+  color: var(--primary-dark);
+  border-radius: 10px;
+  padding: 12px 16px;
+  font-size: 0.9rem;
+  font-weight: 600;
+  text-align: center;
+  flex: 1 1 160px;
+  min-width: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.flow .step small {
+  display: block;
+  font-weight: 400;
+  color: var(--text-muted);
+  font-size: 0.8rem;
+  margin-top: 4px;
+}
+
+.flow .arrow {
+  align-self: center;
+  color: var(--accent);
+  font-size: 1.4rem;
+  font-weight: 700;
+}
+
+/* Checklist */
+.checklist {
+  list-style: none;
+  margin-left: 0 !important;
+}
+
+.checklist li {
+  background: var(--code-bg);
+  border-left: 4px solid var(--primary);
+  padding: 12px 16px;
+  border-radius: 0 8px 8px 0;
+  margin-bottom: 10px;
+}
+
+.checklist li::before {
+  content: "✓ ";
+  color: var(--primary);
+  font-weight: 800;
+}
+
+/* ---------- Referensi ---------- */
+#referensi {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 36px 40px;
+  margin-bottom: 32px;
+}
+
+#referensi h2 {
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+  padding-bottom: 14px;
+  border-bottom: 2px solid var(--border);
+}
+
+#referensi ol {
+  margin-left: 24px;
+}
+
+#referensi li {
+  margin-bottom: 14px;
+  font-size: 0.95rem;
+}
+
+#referensi a {
+  color: var(--primary);
+  word-break: break-word;
+}
+
+.catatan {
+  margin-top: 24px;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  background: var(--code-bg);
+  padding: 14px 18px;
+  border-radius: 8px;
+}
+
+/* ---------- Footer ---------- */
+footer {
+  background: #0f172a;
+  color: #cbd5e1;
+  text-align: center;
+  padding: 32px 24px;
+  font-size: 0.9rem;
+}
+
+footer .nama-footer {
+  color: #fff;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+
+footer p {
+  margin-bottom: 6px;
+}
+
+/* ---------- Kembali ke atas ---------- */
+#toTop {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  background: var(--primary);
+  color: #fff;
+  border: none;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: 0 6px 16px rgba(26, 86, 219, 0.4);
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+  z-index: 50;
+}
+
+#toTop.show {
+  opacity: 1;
+  visibility: visible;
+}
+
+#toTop:hover {
+  background: var(--primary-dark);
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 640px) {
+  section.jawaban,
+  #referensi {
+    padding: 26px 20px;
+  }
+
+  .flow .arrow {
+    transform: rotate(90deg);
+    width: 100%;
+    text-align: center;
+  }
+}
